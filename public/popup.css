@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+}
+
+.extract {
+  --bg: #e74c3c;
+  --text-color: #fff;
+  display: flex;
+  margin: auto;
+  position: relative;
+  width: 150px;
+  border: none;
+  background: var(--bg);
+  color: var(--text-color);
+  padding: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.2s;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  box-shadow: #c0392b 0px 7px 2px, #000 0px 8px 5px;
+}
+
+.extract:hover {
+  opacity: 1;
+}
+
+.extract:active {
+  top: 4px;
+  box-shadow: #c0392b 0px 2px, #000 0px 3px 5px;
+}
