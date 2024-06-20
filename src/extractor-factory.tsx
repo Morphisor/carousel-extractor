@@ -23,6 +23,17 @@ function ruoteclassicheExtractor() {
   })
 }
 
+function repubblicaExtractor() {
+  const container = document.getElementsByClassName("thumbs")[0]
+  const containers: any[] = Array.from(container.children)
+  containers.forEach((c: any) => {
+    const linkEl = c.querySelector("a")
+    const link = linkEl.getAttribute("href")
+    const cleanLink = link.replace('/M/', '/D/')
+    window.open(`https://annunci.repubblica.it${cleanLink}`, "_blank")
+  })
+}
+
 
 export function getExtractor() {
   const host = window.location.host
@@ -31,6 +42,8 @@ export function getExtractor() {
       return subitoExtractor
     case "ruoteclassiche.quattroruote.it":
       return ruoteclassicheExtractor
+    case "annunci.repubblica.it":
+      return repubblicaExtractor
     default:
       throw new Error("host not supported")
   }
